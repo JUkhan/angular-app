@@ -1,0 +1,13 @@
+<div class="mt-5">
+    <div *ngFor="let s of steps" [class.bg-purple-500]="s.active" class="bg-purple-200 py-1 px-4 rounded-full inline-block mr-2">{{s.title}}</div>
+    
+    <div class="container p-4">
+        <app-step1 [active]="steps[0].active" appStepSelector></app-step1>
+        <app-step2 [active]="steps[1].active" appStepSelector></app-step2>
+        <app-final-step [active]="steps[2].active" appStepSelector></app-final-step>
+    </div>
+    <div>
+        <button (click)="prev()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Prev</button>
+        <button (click)="next()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Next</button>
+    </div>
+</div>

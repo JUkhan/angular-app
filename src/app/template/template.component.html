@@ -1,0 +1,17 @@
+
+<div class="flex">
+    <div class="flex-col mr-5">
+        <app-outlet title="templte-1" [options]="['Omar Faruk','Abdulla','Shilpi']">
+            <ng-template #optionTemplate let-name>
+                <div class="border-gray-300 bg-pink-400 mt-1 p-2 rounded">{{name}}</div>
+            </ng-template>
+        </app-outlet>
+    </div>
+    <div class="flex-col">
+        <app-outlet title="templte-2" [options]="['Jasim','Abdur Rahman Abdulla','Ranu']">
+            <ng-template #optionTemplate let-name>
+                <div class="border-gray-300 bg-green-400 mt-1 p-2 rounded">{{name}}</div>
+            </ng-template>
+        </app-outlet>
+    </div>
+</div>

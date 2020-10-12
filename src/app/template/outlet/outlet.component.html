@@ -1,0 +1,9 @@
+<div class="container">
+    <div><strong>{{title}}</strong></div>
+    <div *ngFor="let option of options">
+        <ng-container
+            [ngTemplateOutlet]="templateRef"
+            [ngTemplateOutletContext]="{$implicit:option}">
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="sm:flex sm:items-center px-6 py-4">
+
+        <form [formGroup]="loginGroup" (ngSubmit)="login()" class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+            <div>
+                <label class="w-20 inline-block" for="pass">Pass</label>
+                <input formControlName="pass" class="px-1 border" id="pass" type="text">
+                <div *ngIf="pass.pending">Validating...</div>
+                <div *ngIf="(pass.dirty || pass.touched) && pass.invalid" class="text-red-300 px-20">
+                    <div *ngIf="pass.errors?.required">Pass is required</div>
+                    <div *ngIf="pass.errors?.validpass">pass should be <strong>as</strong></div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <label class="w-20 inline-block" for="cpass">Con Pass</label>
+                <input formControlName="conPass" class="px-1 border" id="cpass" type="text">
+
+                <div *ngIf="(conPass.dirty || conPass.touched) && conPass.invalid" class="text-red-300 px-20">
+                    <div *ngIf="conPass.errors?.required">Confirmed Pass is required</div>
+
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <button [disabled]="!loginGroup.valid"
+                    [ngClass]="{'hover:text-white hover:bg-purple-500':loginGroup.valid}"
+                    class="text-purple-500  border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

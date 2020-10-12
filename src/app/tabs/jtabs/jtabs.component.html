@@ -1,0 +1,8 @@
+<div class="mt-5">
+    <button (click)="selectTab(s)" *ngFor="let s of tabServices; let i=index" [class.bg-purple-500]="s.active" class="bg-purple-200 py-1 px-4 rounded-full inline-block mr-2">{{s.label}}</button>
+    
+    <div class="container p-4">
+       <ng-content></ng-content>
+    </div>
+   
+</div>

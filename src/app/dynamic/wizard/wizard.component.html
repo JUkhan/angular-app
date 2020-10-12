@@ -1,0 +1,12 @@
+
+<div class="mt-5">
+    <div *ngFor="let s of config" [class.bg-purple-500]="s.active" class="bg-purple-200 py-1 px-4 rounded-full inline-block mr-2">{{s.stepName}}</div>
+    
+    <div class="container p-4">
+        <ng-container #vcr></ng-container>
+    </div>
+    <div>
+        <button (click)="prev()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Prev</button>
+        <button (click)="next()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Next</button>
+    </div>
+</div>
