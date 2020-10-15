@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'stepper', loadChildren: () => import('./stepper/stepper.module').then(m => m.StepperModule) },
   { path: 'dynamic', loadChildren: () => import('./dynamic/dynamic.module').then(m => m.DynamicModule) },
   { path: 'template', loadChildren: () => import('./template/template.module').then(m => m.TemplateModule) },
+  { path: 'rxjs', loadChildren: () => import('./rxjs/rxjs.module').then(m => m.RxjsModule) },
 ];
 
 @NgModule({

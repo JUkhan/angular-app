@@ -1,0 +1,9 @@
+<app-touch-drag-to-refresh (refresh)="newsfeed.refresh$.next()"></app-touch-drag-to-refresh>
+
+<h2>Latest News</h2>
+
+<article class="mt-2" *ngFor="let news of (news$ | async)">
+  <h4 style="color: goldenrod;">{{news.title}}</h4>
+  <time>{{news.date | date: 'medium'}}</time> by {{news.author}}
+  <p>{{news.contentSample}}</p>
+</article>
