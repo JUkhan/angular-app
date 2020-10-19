@@ -38,7 +38,7 @@ export class TouchDragToRefreshComponent implements OnInit {
     takeWhile(y => y <= window.innerHeight / 2),
   );
 
-  moveHome$ = defer(() => this.rxAnimations.tween(this._pos, 0, 200))
+  moveHome$ = defer(() => this.rxAnimations.tween(this._pos, 0, 200));
 
   moveHomeAfterLoad$ = this.newsfeed.loadNews$.pipe(
     exhaustMap(() => this.moveHome$)

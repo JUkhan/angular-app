@@ -37,5 +37,5 @@ export function generateRandomDataItem() {
 }
 
 function capitalizeTitle(str: string): string {
-    return str.replace(/\w\S*/g, (txt: string) => txt[0].toUpperCase() + txt.substr(1))
+    return str.replace(/\w\S*/g, (txt: string) => txt[0].toUpperCase() + txt.substr(1));
 }

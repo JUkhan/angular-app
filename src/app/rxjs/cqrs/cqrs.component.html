@@ -1,0 +1,13 @@
+<div class="text-center">
+    <div>{{count$|async}}</div>
+    <div>
+        <button (click)="start()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Start</button>
+        <button (click)="stop()"  class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Stop</button>
+    </div>
+    <div>
+        <button (click)="reset()" class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Reset</button>
+        <input style="width: 50px;" type="number" [(ngModel)]="resetValue" >
+        <button (click)="countDown()"  class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Count Down</button>
+        <button (click)="countInc()"  class="bg-pink-500 rounded-full border py-1 px-4 mr-2">Count Increment</button>
+    </div>
+</div>

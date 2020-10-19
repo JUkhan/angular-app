@@ -1,5 +1,3 @@
-<!-- <app-touch-drag-to-refresh (refresh)="newsfeed.refresh$.next()"></app-touch-drag-to-refresh> -->
-<app-tdtr (refresh)="refresh()"></app-tdtr>
 <h2>Latest News</h2>
 
 <article class="mt-2" *ngFor="let news of (news$ | async)">

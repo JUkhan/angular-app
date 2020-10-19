@@ -1,3 +1,4 @@
+import { StoreService, NewsAction } from './store.service';
 import { exhaustMap, catchError, share } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,11 +16,11 @@ export class NewsFeedService {
     share()
   );
 
-  refresh$ = new BehaviorSubject(null);
+  refresh$ = this.store.actions.whereType(NewsAction.Refresh);
 
   news$ = this.refresh$.pipe(
     exhaustMap(e => this.loadNews$)
   );
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private store: StoreService) { }
 }
