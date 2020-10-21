@@ -1,3 +1,4 @@
+import { TodoService } from './todos/todoService';
 import { StoreService } from './services/store.service';
 import { CqrsService } from './services/cqrs.service';
 import { EventBus } from './services/event-bus';
@@ -19,10 +20,17 @@ import { FormsModule } from '@angular/forms';
 import { LatestNews2Component } from './latest-news2/latest-news2.component';
 import { NewsRefreshComponent } from './latest-news2/news-refresh/news-refresh.component';
 import { NewsContainerComponent } from './latest-news2/news-container/news-container.component';
+import { CounterComponent } from './counter/counter.component';
+import { TodosComponent } from './todos/todos.component';
+import { Counter2Component } from './counter2/counter2.component';
+import { TodoItemComponent } from './todos/todo-item/todo-item.component';
+import { TodoToolbarComponent } from './todos/todo-toolbar/todo-toolbar.component';
+import { LoadingComponent } from './todos/loading/loading.component';
+import { AddTodoComponent } from './todos/add-todo/add-todo.component';
 
 
 @NgModule({
-  declarations: [RxjsComponent, LatestNewsComponent, TouchDragToRefreshComponent, TdtrComponent, CqrsComponent, LatestNews2Component, NewsRefreshComponent, NewsContainerComponent],
+  declarations: [RxjsComponent, LatestNewsComponent, TouchDragToRefreshComponent, TdtrComponent, CqrsComponent, LatestNews2Component, NewsRefreshComponent, NewsContainerComponent, CounterComponent, TodosComponent, Counter2Component, TodoItemComponent, TodoToolbarComponent, LoadingComponent, AddTodoComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -35,7 +43,8 @@ import { NewsContainerComponent } from './latest-news2/news-container/news-conta
     EventBus,
     CqrsService,
     StoreService,
-    RxAnimationService
+    RxAnimationService,
+    TodoService,
   ]
 })
 export class RxjsModule { }

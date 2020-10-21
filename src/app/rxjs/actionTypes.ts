@@ -1,0 +1,1 @@
+export enum CounterActions { Inc = 'counter-inc', Dec = 'counter-dec', AsyncInc = 'counter-asyncInc' }

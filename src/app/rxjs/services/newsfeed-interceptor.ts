@@ -3,9 +3,11 @@ import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest, HttpResponse } fr
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import * as faker from 'faker';
+
 @Injectable()
 export class NewsFeedInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.log(req);
         if (req.url === '/newsfeed') {
             const response = new HttpResponse({
                 body: generateRandomData()
@@ -15,11 +17,52 @@ export class NewsFeedInterceptor implements HttpInterceptor {
                     delay(1000)
                 );
         }
+        else if (req.url.startsWith('/todos')) {
+            let response = null;
+            if (req.method === 'GET') {
+                response = new HttpResponse({
+                    body: generateTodosData()
+                });
+
+            }
+            else if (req.method === 'POST') {
+
+                response = new HttpResponse({
+                    body: { ...req.body, id: ++id }
+                });
+            }
+            else if (req.method === 'PUT') {
+
+                response = new HttpResponse({
+                    body: { ...req.body }
+                });
+            }
+            else if (req.method === 'DELETE') {
+                console.log(req.url.substr(6));
+                response = new HttpResponse({
+                    body: +req.url.substr(7)
+                });
+            }
+            return of(response)
+                .pipe(
+                    delay(1000)
+                );
+
+        }
         else { return next.handle(req); }
     }
 }
 export function generateRandomData() {
     return Array.from({ length: 20 }, generateRandomDataItem);
+}
+let id = 1;
+export function generateTodosData() {
+    return Array.from({ length: 5 }, () => ({
+        id: ++id,
+        description: faker.hacker.adjective() +
+            ' ' + faker.hacker.noun(),
+        completed: false
+    }));
 }
 
 export function generateRandomDataItem() {

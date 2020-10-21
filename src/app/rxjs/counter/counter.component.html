@@ -1,0 +1,8 @@
+<div class="text-center">
+    <button (click)="increment()">+</button>
+    <button (click)="asyncIncrement()">Async(+)</button>
+    <button (click)="decrement()">-</button>
+    <span>{{count$|async}}</span>
+</div>
+
+<app-counter2></app-counter2>

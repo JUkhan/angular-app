@@ -1,3 +1,5 @@
+import { TodosComponent } from './todos/todos.component';
+import { CounterComponent } from './counter/counter.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { CqrsComponent } from './cqrs/cqrs.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +14,9 @@ const routes: Routes = [
       { path: '', component: CqrsComponent },
       { path: 'cqrs', component: CqrsComponent },
       { path: 'latestnews', component: LatestNewsComponent },
-      { path: 'latestnews2', component: LatestNews2Component }
+      { path: 'latestnews2', component: LatestNews2Component },
+      { path: 'counter', component: CounterComponent },
+      { path: 'todos', component: TodosComponent }
     ]
   },
 

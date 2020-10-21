@@ -1,0 +1,6 @@
+<div class="text-center">
+    <button (click)="command$.next('inc')">+</button>
+    <button (click)="command$.next('asyncInc')">Async(+)</button>
+    <button (click)="command$.next('dec')">-</button>
+    <span>{{count$|async}}</span>
+</div>
