@@ -1,0 +1,8 @@
+button{
+    color:whitesmoke;
+    @apply border rounded-full bg-purple-400 px-4 py-1
+}
+li button{
+    cursor: pointer;
+    @apply border rounded-full bg-pink-400
+}

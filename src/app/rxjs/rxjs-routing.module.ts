@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RxjsComponent } from './rxjs.component';
 import { LatestNews2Component } from './latest-news2/latest-news2.component';
+import { RelationComponent } from './relation/relation.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'latestnews', component: LatestNewsComponent },
       { path: 'latestnews2', component: LatestNews2Component },
       { path: 'counter', component: CounterComponent },
-      { path: 'todos', component: TodosComponent }
+      { path: 'todos', component: TodosComponent },
+      { path: 'relation', component: RelationComponent }
     ]
   },
 

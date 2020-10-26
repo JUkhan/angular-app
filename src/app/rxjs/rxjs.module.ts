@@ -27,10 +27,14 @@ import { TodoItemComponent } from './todos/todo-item/todo-item.component';
 import { TodoToolbarComponent } from './todos/todo-toolbar/todo-toolbar.component';
 import { LoadingComponent } from './todos/loading/loading.component';
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
+import { RelationComponent } from './relation/relation.component';
 
 
 @NgModule({
-  declarations: [RxjsComponent, LatestNewsComponent, TouchDragToRefreshComponent, TdtrComponent, CqrsComponent, LatestNews2Component, NewsRefreshComponent, NewsContainerComponent, CounterComponent, TodosComponent, Counter2Component, TodoItemComponent, TodoToolbarComponent, LoadingComponent, AddTodoComponent],
+  declarations: [RxjsComponent, LatestNewsComponent, TouchDragToRefreshComponent,
+    TdtrComponent, CqrsComponent, LatestNews2Component, NewsRefreshComponent,
+    NewsContainerComponent, CounterComponent, TodosComponent, Counter2Component,
+    TodoItemComponent, TodoToolbarComponent, LoadingComponent, AddTodoComponent, RelationComponent],
   imports: [
     CommonModule,
     HttpClientModule,

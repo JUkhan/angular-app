@@ -1,0 +1,24 @@
+<div class="text-center">
+    <div>
+        <button  (click)="refresh()">Refresh</button>
+    </div>
+    <div>
+        <ul>
+            <li *ngIf="can1$|async  as a">
+                <img class="w-10 rounded-full" attr.src="{{a.avatar_url}}"/>
+                <a attr.href="{{a.html_url}}" target="_blank" class="username">{{a.login}}</a>
+                <button (click)="cancel1()">x</button>
+            </li>
+            <li *ngIf="can2$|async  as a">
+                <img class="w-10 rounded-full" attr.src="{{a.avatar_url}}"/>
+                <a attr.href="{{a.html_url}}" target="_blank" class="username">{{a.login}}</a>
+                <button (click)="cancel2()">x</button>
+            </li>
+            <li *ngIf="can3$|async  as a">
+                <img class="w-10 rounded-full" attr.src="{{a.avatar_url}}"/>
+                <a attr.href="{{a.html_url}}" target="_blank" class="username">{{a.login}}</a>
+               <button (click)="cancel3()">x</button>
+            </li>
+        </ul>
+    </div>
+</div>
